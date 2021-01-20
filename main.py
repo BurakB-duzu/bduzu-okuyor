@@ -51,7 +51,7 @@ def veri_yolla():
    if request.method == 'POST':
       yazi = request.form['veri']
       print(yazi)
-      return sonuc_hazirla(yazi) ##böyle bi fonksiyonla tablo döndür.
+      return render_template('result.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
 
 def sonuc_hazirla(yazi):
     tum_toplam = {}
@@ -152,14 +152,12 @@ def sonuc_hazirla(yazi):
     pd.set_option('colheader_justify', 'center')  # FOR TABLE <th>
 
     html_string = '''
-    <html>
     <meta charset="UTF-8">
       <head><title>HTML Pandas Dataframe with CSS</title></head>
       <link rel="stylesheet" type="text/css" href="df_style.css"/>
       <body>
         {table}
       </body>
-    </html>.
     '''
     print("AAAAAAAAAAA")
     # OUTPUT AN HTML FILE
