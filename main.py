@@ -152,12 +152,14 @@ def sonuc_hazirla(yazi):
     pd.set_option('colheader_justify', 'center')  # FOR TABLE <th>
 
     html_string = '''
+    <html>
     <meta charset="UTF-8">
       <head><title>HTML Pandas Dataframe with CSS</title></head>
       <link rel="stylesheet" type="text/css" href="df_style.css"/>
       <body>
         {table}
       </body>
+    </html>
     '''
     print("AAAAAAAAAAA")
     # OUTPUT AN HTML FILE
