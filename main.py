@@ -46,16 +46,12 @@ def hello():
 def success(name):
    return 'welcome %s' % name
 
-@app.route('/veri_yolla',methods = ['POST', 'GET'])
+@app.route('/veri_yolla',methods = ['POST' ])
 def veri_yolla():
    if request.method == 'POST':
       yazi = request.form['veri']
       print(yazi)
       return sonuc_hazirla(yazi) ##böyle bi fonksiyonla tablo döndür.
-      
-   else:
-      user = request.args.get('nm')
-      return redirect(url_for('success',name = user))
 
 def sonuc_hazirla(yazi):
     tum_toplam = {}
