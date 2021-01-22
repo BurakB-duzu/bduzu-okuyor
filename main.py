@@ -42,16 +42,18 @@ app = Flask(__name__)
 def hello():
    return render_template('indexx.html')
 
-@app.route('/success/<name>')
-def success(name):
-   return 'welcome %s' % name
+global yazi
+
+@app.route('/success')
+def success():
+    return render_template('indexx.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
 
 @app.route('/verii',methods = ['POST','GET'])
 def verii():
     if request.method == 'POST':
+        global yazi
         yazi = request.form['veri']
-    return render_template('indexx.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
-
+    return redirect('/success')
 def sonuc_hazirla(yazi):
     tum_toplam = {}
     kisiler = []
