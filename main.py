@@ -46,7 +46,7 @@ def hello():
 def success(name):
    return 'welcome %s' % name
 
-@app.route('/veri_yolla')
+@app.route('/veri_yolla',methods = ['POST' ,'GET'])
 def veri_yolla():
    if request.method == 'POST':
       yazi = request.form['veri']
