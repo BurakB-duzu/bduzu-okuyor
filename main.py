@@ -48,10 +48,9 @@ def success(name):
 
 @app.route('/veri_yolla',methods = ['POST' ,'GET'])
 def veri_yolla():
-   if request.method == 'POST':
-      yazi = request.form['veri']
-      print(yazi)
-      return render_template('result.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
+  yazi = request.form['veri']
+  print(yazi)
+  return render_template('result.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
 
 def sonuc_hazirla(yazi):
     tum_toplam = {}
