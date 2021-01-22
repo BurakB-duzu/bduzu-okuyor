@@ -180,8 +180,6 @@ bosdict2 = {"key3": "val3", "key4": "val4"}
 # tum_toplam={"28.11":bosdict,"afsd":bosdict2}
 
 
-import datetime
-
 
 '''
 
