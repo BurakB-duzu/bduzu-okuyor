@@ -40,17 +40,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-   return render_template('ana.html')
+   return render_template('indexx.html')
 
 @app.route('/success/<name>')
 def success(name):
    return 'welcome %s' % name
 
 @app.route('/verii',methods = ['POST'])
-def entry_post():
-  yazi = request.form['veri']
-  print(yazi)
-  return render_template('indexx.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
+def verii():
+    if request.method == 'POST':
+        yazi = request.form['veri']
+    return render_template('indexx.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
 
 def sonuc_hazirla(yazi):
     tum_toplam = {}
