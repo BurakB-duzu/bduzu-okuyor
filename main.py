@@ -48,7 +48,7 @@ global yazi
 def success():
     return render_template('indexx.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
 
-@app.route('/verii',methods = ['POST','GET'])
+@app.route('/verii',methods = ['POST'])
 def verii():
     if request.method == 'POST':
         global yazi
