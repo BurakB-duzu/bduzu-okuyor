@@ -46,8 +46,8 @@ def hello():
 def success(name):
    return 'welcome %s' % name
 
-@app.route('/veri_yolla',methods = ['POST'])
-def veri_yolla():
+@app.route('/verii',methods = ['POST'])
+def entry_post():
   yazi = request.form['veri']
   print(yazi)
   return render_template('indexx.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
