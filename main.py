@@ -50,7 +50,7 @@ def success(name):
 def veri_yolla():
   yazi = request.form['veri']
   print(yazi)
-  return render_template('indexxx.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
+  return render_template('indexx.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
 
 def sonuc_hazirla(yazi):
     tum_toplam = {}
