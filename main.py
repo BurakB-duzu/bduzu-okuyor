@@ -38,7 +38,7 @@ import datetime
 import pandas as pd
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods = ['GET'])
 def hello():
    return render_template('indexx.html')
 
