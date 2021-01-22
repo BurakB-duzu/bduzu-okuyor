@@ -50,7 +50,7 @@ def success(name):
 def veri_yolla():
   yazi = request.form['veri']
   print(yazi)
-  return render_template('result.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
+  return render_template('index.html',table=sonuc_hazirla(yazi)) ##böyle bi fonksiyonla tablo döndür.
 
 def sonuc_hazirla(yazi):
     tum_toplam = {}
@@ -164,7 +164,8 @@ def sonuc_hazirla(yazi):
     # OUTPUT AN HTML FILE
     #with open('myhtml3.html', 'w+', encoding="utf-8") as f:
     #    f.write(html_string.format(table=df_output.to_html(classes='mystyle')))
-    return html_string.format(table=df_output.to_html(classes='mystyle'))
+    #return html_string.format(table=df_output.to_html(classes='mystyle'))
+    return df_output.to_html(classes='mystyle')
 
 if __name__ == '__main__':
    app.run(debug = True)
