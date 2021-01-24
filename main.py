@@ -116,8 +116,10 @@ def sonuc_hazirla(yazi):
     print(sum_row)
     col_row = df.sum(axis=0)
     print(col_row)
-    df_output = pd.DataFrame(columns=df.axes[1])
-    df_output.insert(0, "Kisiler", [], True)
+    haftanin_gunleri=["Pazartesi","Salı","Çarşamba","Perşembe","Cuma",
+    "Cumartesi","Pazar"]
+    df_output = pd.DataFrame(columns=haftanin_gunleri)
+    df_output.insert(0, "", [], True)
     for kisi, sayfa in sum_row.items():
         print(f"Index : {kisi}, Value : {sayfa}")
         if (sayfa >= 7):
