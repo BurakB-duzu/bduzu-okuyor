@@ -57,6 +57,7 @@ def sonuc_hazirla(yazi):
         print(x[0][1:].split()[0] + " ww " + x[1].split(":")[0] + " ww " + x[1].split(":")[1])
         gun = x[0][1:].split()[0]
         kisi = x[1].split(":")[0][1:]
+        kisi =' '.join([w for w in kisi.split() if len(w) > 1])
         if kisi not in kisiler:
             kisiler.append(kisi)
         # tikler_str= x[1].split(":")[1]
@@ -81,6 +82,8 @@ def sonuc_hazirla(yazi):
         print(x[0][1:].split()[0] + " ww " + x[1].split(":")[0] + " ww " + x[1].split(":")[1])
         gun = x[0][1:].split()[0]
         kisi = x[1].split(":")[0][1:]
+        kisi =' '.join([w for w in kisi.split() if len(w) > 1])
+
         # tikler_str= x[1].split(":")[1]
         tikler = line.count('✅')
         if "tam" in line.lower():
@@ -163,7 +166,7 @@ def sonuc_hazirla(yazi):
     #with open('myhtml3.html', 'w+', encoding="utf-8") as f:
     #    f.write(html_string.format(table=df_output.to_html(classes='mystyle')))
     #return html_string.format(table=df_output.to_html(classes='mystyle'))
-    return df_output.to_html(classes='mystyle',table_id='preview-table')
+    return df_output.to_html(classes='mystyle',table_id='preview-table',index=False)
 
 if __name__ == '__main__':
    app.run(debug = True)
