@@ -13,17 +13,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>type="text/javascript" src="html2canvas.js"></script>
-<script type="text/javascript">
-function do_change(){
-document.getElementById("export").style.display = "block";
-
-}
+<script>src="html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-alpha1/html2canvas.js">
 </script>
-    <script type="text/javascript">
-
-$('#export').on('click', function() {
-    html2canvas($('#preview-table'), {
+<script>
+function download_table(){
+                console.log("basildi")
+html2canvas($('#preview-table'), {
         onrendered: function(canvas) {
 
             var saveAs = function(uri, filename) {
@@ -43,6 +39,35 @@ $('#export').on('click', function() {
                 uri = img.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
 
             saveAs(uri, 'tableExport.png');
+        }
+    });
+
+}
+</script>
+    <script type="text/javascript">
+
+$('#export').on('click', function() {
+    console.log('export basildi')
+    html2canvas($('#preview-table'), {
+        onrendered: function(canvas) {
+
+            var saveAs = function(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    document.body.appendChild(link); // Firefox requires the link to be in the body
+                    link.download = filename;
+                    link.href = uri;
+                    link.click();
+                    document.body.removeChild(link); // remove the link when done
+                } else {
+                    location.replace(uri);
+                }
+            };
+
+            var img = canvas.toDataURL("image/png"),
+                uri = img.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+
+            saveAs(uri, 'tik_tablosu.png');
         }
     });
 });
@@ -85,7 +110,7 @@ body{
 
 <div class="row text-center">
  {{table|safe}}
-    <button id="export" style="display:block;">Tablo indir</button>
+    <button id="export"  onclick="download_table()">Tablo indir</button>
 </div>
 </div>
 <!-- This design is created by manoj chauhan  -->
