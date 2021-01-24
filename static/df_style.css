@@ -5,11 +5,13 @@
     font-family: Arial;
     border-collapse: collapse;
     border: 1px solid silver;
-
+    padding: 70%;
 }
 
 .mystyle td, th {
-    padding: 5px;
+        padding: 130%;
+        margin: 130%;
+
 }
 
 .mystyle tr:nth-child(even) {
