@@ -58,6 +58,8 @@ def sonuc_hazirla(yazi):
         gun = x[0][1:].split()[0]
         kisi = x[1].split(":")[0][1:]
         kisi =' '.join([w for w in kisi.split() if len(w) > 1])
+        if 'DM' in kisi:
+            kisi=kisi[3:]
         if kisi not in kisiler:
             kisiler.append(kisi)
         # tikler_str= x[1].split(":")[1]
@@ -83,7 +85,8 @@ def sonuc_hazirla(yazi):
         gun = x[0][1:].split()[0]
         kisi = x[1].split(":")[0][1:]
         kisi =' '.join([w for w in kisi.split() if len(w) > 1])
-
+        if 'DM' in kisi:
+            kisi=kisi[3:]
         # tikler_str= x[1].split(":")[1]
         tikler = line.count('✅')
         if "tam" in line.lower():
