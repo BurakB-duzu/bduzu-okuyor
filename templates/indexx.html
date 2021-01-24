@@ -40,7 +40,7 @@ html2canvas($('#preview-table'), {
             var img = canvas.toDataURL("image/png"),
                 uri = img.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
 
-            saveAs(uri, 'tableExport.png');
+            saveAs(uri, 'tik_tablosu.png');
         }
     });
 
@@ -85,7 +85,7 @@ body{
       background-color: white;
 }
 .mystyle {
-    font-size: 19pt;
+    font-size: 12pt;
     font-family: Arial;
     border-collapse: collapse;
     border: 1px solid silver;
