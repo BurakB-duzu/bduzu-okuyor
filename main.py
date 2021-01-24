@@ -83,6 +83,8 @@ def sonuc_hazirla(yazi):
         kisi = x[1].split(":")[0][1:]
         # tikler_str= x[1].split(":")[1]
         tikler = line.count('✅')
+        if "tam" in line.lower():
+            tikler=7
         if (gun in tum_toplam):
             tum_toplam[gun][kisi] = tum_toplam[gun][kisi] + tikler
         else:  # eger hafta gunlerinde yoksa son güne koy
@@ -161,7 +163,7 @@ def sonuc_hazirla(yazi):
     #with open('myhtml3.html', 'w+', encoding="utf-8") as f:
     #    f.write(html_string.format(table=df_output.to_html(classes='mystyle')))
     #return html_string.format(table=df_output.to_html(classes='mystyle'))
-    return df_output.to_html(classes='mystyle')
+    return df_output.to_html(classes='mystyle',table_id='preview-table')
 
 if __name__ == '__main__':
    app.run(debug = True)
